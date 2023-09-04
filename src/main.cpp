@@ -58,6 +58,24 @@ int main(int argc, char* argv[]) {
         }
     }
     // for each set of vectors belonging to a tag
+    int num = 0;
+    for (int i = 0; i < NUM_KMEANS; i++) {
+        std::vector<double> mean {0.0, 0.0, 0.0};
+        for (int j = 0; j < NUM_VECTORS; j++) {
+            if (myVectors[j][3] == i) {
+                mean[0] += myVectors[j][0];
+                mean[1] += myVectors[j][1];
+                mean[2] += myVectors[j][2];
+                num += 1;
+            }
+        }
+        if (num != 0) {
+            mean[0] /= num;
+            mean[1] /= num;
+            mean[2] /= num;
+        }
+
+    }
         // calculate a new mean based on the average location of those vectors
 
     return 0;
