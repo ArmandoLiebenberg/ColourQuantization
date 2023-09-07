@@ -15,11 +15,10 @@
 #define NUM_KMEANS 256
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 
-extern "C" {
-    #define STB_IMAGE_IMPLEMENTATION
-    #include "../lib/stb_image.h"
-    #include "../lib/stb_image_write.h"
-}
+#define STB_IMAGE_IMPLEMENTATION
+#include "../lib/stb_image.h"
+#include "../lib/stb_image_write.h"
+
 
 void modify_and_print(int width, int height, std::vector<std::vector<int>> kmeans, std::vector<unsigned char> image, std::vector<int> tags);
 std::vector<std::vector<int>> tag_pixels(int width, int height, std::vector<std::vector<int>> kmeans, std::vector<unsigned char> image, std::vector<int> tags);
@@ -195,9 +194,10 @@ std::vector<std::vector<int>> select_random(std::vector<unsigned char> image, in
     // generate a random seed
     std::random_device r;
     std::seed_seq seed_seq{r(), r(), r(), r(), r(), r(), r(), r()};
+    long unsigned int consantSeed = 42;
 
     // initialise the rng with the seed
-    std::mt19937 mersenne{seed_seq};
+    std::mt19937 mersenne{consantSeed};
 
     std::uniform_int_distribution<int> dice(0, width*height);
 
@@ -205,6 +205,7 @@ std::vector<std::vector<int>> select_random(std::vector<unsigned char> image, in
     std::vector<std::vector<int>> kmeans(NUM_KMEANS);
     for (int i = 0; i < NUM_KMEANS; i++) {
         int index = dice(mersenne) * 3;
+        printf("index is: %d\n", index);
         kmeans[i] = std::vector<int> {static_cast<int>(image[index + 0]), static_cast<int>(image[index + 1]), static_cast<int>(image[index + 2]), i};
     }
     return kmeans;
