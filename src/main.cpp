@@ -21,11 +21,11 @@
 
 
 void modify_and_print(int width, int height, std::vector<std::vector<int>> kmeans, std::vector<unsigned char> image, std::vector<int> tags);
-std::vector<std::vector<int>> tag_pixels(int width, int height, std::vector<std::vector<int>> kmeans, std::vector<unsigned char> image, std::vector<int> tags);
-std::vector<int> find_distance(int width, int height, std::vector<std::vector<int>> kmeans, std::vector<unsigned char> image, std::vector<int> tags);
+std::vector<std::vector<int>> tag_pixels(int width, int height, std::vector<std::vector<int>> kmeans, std::vector<int>  image, std::vector<int> tags);
+std::vector<int> find_distance(int width, int height, std::vector<std::vector<int>> kmeans, std::vector<int>  image, std::vector<int> tags);
 bool load_image(std::vector<unsigned char>& image, const std::string& filename, int& x, int&y);
 std::vector<std::vector<int>> complete_random();
-std::vector<std::vector<int>> select_random(std::vector<unsigned char> image, int width, int height);
+std::vector<std::vector<int>> select_random(std::vector<int>  image, int width, int height);
 std::vector<std::vector<int>> fuzzy(std::vector<unsigned char> image, int width, int height);
 
 
@@ -35,12 +35,18 @@ int main()
     // Image Reading
     std::string filename = "mountains.png";
     int width, height;
-    std::vector<unsigned char> image;
-    bool success = load_image(image, filename, width, height);
+    std::vector<unsigned char> image_data;
+
+    bool success = load_image(image_data, filename, width, height);
     if (!success)
     {
         std::cout << "Error loading image\n";
         return 1;
+    }
+
+    std::vector<int> image(3*width*height);
+    for (int i = 0; i < 3*width*height; i++) {
+        image[i] = static_cast<int>(image_data[i]);
     }
     
     std::cout << "Image width = " << width << '\n';
@@ -50,51 +56,52 @@ int main()
     std::vector<int> tags(width*height, -1);
 
     // generate random k means 
-    std::vector<std::vector<int>> kmeans = select_random(image, width, height);
     //std::vector<std::vector<int>> kmeans = complete_random();
+    std::vector<std::vector<int>> kmeans = select_random(image, width, height);
     //std::vector<std::vector<int>> kmeans = fuzzy(image, width, height);
 
     int cycles = 0;
-    bool changed = true;
-    while (changed) {
-        changed = false;
+    //bool changed = true;
+    //while (changed) {
+    for (int k = 0; k < 5; k++) {
+        //changed = false;
 
         tags = find_distance(width, height, kmeans, image, tags);
         std::vector<std::vector<int>> newKmeans = tag_pixels(width, height, kmeans, image, tags);
 
         if (kmeans != newKmeans) {
-            changed = true;
+            //changed = true;
             kmeans = newKmeans;
             cycles += 1;
         }
     }
 
-    modify_and_print(width, height, kmeans, image, tags);
+    modify_and_print(width, height, kmeans, image_data, tags);
 
     printf("%d cycles ran\n", cycles);
 
     return 0;
 }
 
-void modify_and_print(int width, int height, std::vector<std::vector<int>> kmeans, std::vector<unsigned char> image, std::vector<int> tags) {
+void modify_and_print(int width, int height, std::vector<std::vector<int>> kmeans, std::vector<unsigned char> image_data, std::vector<int> tags) {
     // -----------------------> Modify image data
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
             size_t index = 3 * (x + y*width);
-            image[index + 0] = static_cast<unsigned char>(kmeans[tags[x + y*width]][0]);
-            image[index + 1] = static_cast<unsigned char>(kmeans[tags[x + y*width]][1]);
-            image[index + 2] = static_cast<unsigned char>(kmeans[tags[x + y*width]][2]);
+            image_data[index + 0] = static_cast<unsigned char>(kmeans[tags[x + y*width]][0]);
+            image_data[index + 1] = static_cast<unsigned char>(kmeans[tags[x + y*width]][1]);
+            image_data[index + 2] = static_cast<unsigned char>(kmeans[tags[x + y*width]][2]);
 
         }
     }
 
-    unsigned char* data = &image.front();
+    unsigned char* data = &image_data.front();
 
     remove("output.png");
     stbi_write_png("output.png", width, height, 3, data, width*3);
 }
 
-std::vector<std::vector<int>> tag_pixels(int width, int height, std::vector<std::vector<int>> kmeans, std::vector<unsigned char> image, std::vector<int> tags) {
+std::vector<std::vector<int>> tag_pixels(int width, int height, std::vector<std::vector<int>> kmeans, std::vector<int> image, std::vector<int> tags) {
     std::vector<std::vector<int>> modifiedKmeans(NUM_KMEANS);
     for (int i = 0; i < NUM_KMEANS; i++) {
             int num = 0;
@@ -103,9 +110,9 @@ std::vector<std::vector<int>> tag_pixels(int width, int height, std::vector<std:
                 for (int x = 0; x < width; x++) {
                     size_t index = 3 * (x + y * width);
                     if (tags[x + y*width] == i) {
-                        mean[0] += static_cast<int>(image[index + 0]);
-                        mean[1] += static_cast<int>(image[index + 1]);
-                        mean[2] += static_cast<int>(image[index + 2]);
+                        mean[0] += image[index + 0];
+                        mean[1] += image[index + 1];
+                        mean[2] += image[index + 2];
                         num += 1;
                     }
                 }
@@ -125,7 +132,7 @@ std::vector<std::vector<int>> tag_pixels(int width, int height, std::vector<std:
     return modifiedKmeans;
 }
 
-std::vector<int> find_distance(int width, int height, std::vector<std::vector<int>> kmeans, std::vector<unsigned char> image, std::vector<int> tags) {
+std::vector<int> find_distance(int width, int height, std::vector<std::vector<int>> kmeans, std::vector<int> image, std::vector<int> tags) {
     std::vector<int> modifiedTags(width*height, -1);
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
@@ -135,18 +142,15 @@ std::vector<int> find_distance(int width, int height, std::vector<std::vector<in
             int tag = -1;
 
             for (int i = 0; i < NUM_KMEANS; i++) {
-                double r = kmeans[i][0] - static_cast<int>(image[index + 0]);
-                double g = kmeans[i][1] - static_cast<int>(image[index + 1]);
-                double b = kmeans[i][2] - static_cast<int>(image[index + 2]);
-                double distance = std::sqrt(r*r + g*g + b*b);
+                double distance = pow(kmeans[i][0] - image[index + 0],2) + 
+                    pow(kmeans[i][1] - image[index + 1], 2) + 
+                    pow(kmeans[i][2] - image[index + 2], 2);
 
                 if (distance < miniumum_distance) {
                     miniumum_distance = distance;
                     tag = i;
                 }
             }
-
-            //printf("pixel: %d  tag: %d\n", x + y*width, tag);
             modifiedTags[x + y*width] = tag;
         }
     }
@@ -188,7 +192,7 @@ std::vector<std::vector<int>> complete_random()
     return kmeans;
 }
 
-std::vector<std::vector<int>> select_random(std::vector<unsigned char> image, int width, int height) 
+std::vector<std::vector<int>> select_random(std::vector<int> image, int width, int height) 
 {
 
     // generate a random seed
@@ -205,8 +209,7 @@ std::vector<std::vector<int>> select_random(std::vector<unsigned char> image, in
     std::vector<std::vector<int>> kmeans(NUM_KMEANS);
     for (int i = 0; i < NUM_KMEANS; i++) {
         int index = dice(mersenne) * 3;
-        printf("index is: %d\n", index);
-        kmeans[i] = std::vector<int> {static_cast<int>(image[index + 0]), static_cast<int>(image[index + 1]), static_cast<int>(image[index + 2]), i};
+        kmeans[i] = std::vector<int> {image[index + 0], image[index + 1], image[index + 2], i};
     }
     return kmeans;
 }
