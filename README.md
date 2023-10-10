@@ -64,7 +64,7 @@ Run with ./make
 - [ ] Add support for OPENMP/MPI over server cluster
 - [ ] Add GUI support using QT or Dear IMGUI
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/ArmandoLiebenberg/ColourQuantization/issues) for a full list of proposed features (and known issues).
 
 <!-- LICENSE -->
 ## License
