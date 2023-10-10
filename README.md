@@ -29,26 +29,15 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 Colour Image Quantization using K-Means Clustering. Color quantization is quantization (Compressing a range of values) applied to color spaces, typically of images or video.
 In practice this means taking an image, sampling its colour palette, and producing a smaller color pallete that maintains the detail and brightness of the original image.
 
 This is typically done through means of a clustering algorithm. Treating the colours in the color pallete as vectors in 3D space (Typically in RGB, though there are color spaces
 that are more suited for this sort of thing), and solving using a clustering algorithm. For this problem we've gone with the simple 'Naive K-means' clustering algorithm.
 
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 ### Built With
 
 The project is written in C++, using make to build. For image processing we use the wonderful stb_image and stb_image_write libraries from Sean Barrett.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -65,10 +54,6 @@ G++ 8.5.0 20210514 is used
 
 Run with ./make
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 <!-- ROADMAP -->
 ## Roadmap
 
@@ -81,17 +66,12 @@ Run with ./make
 
 See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 <!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- CONTACT -->
 ## Contact
@@ -101,8 +81,6 @@ Armando Liebenberg - armandoliebenberg@gmail.com
 Project Link: [https://github.com/ArmandoLiebenberg/ColourQuantization](https://github.com/ArmandoLiebenberg/ColourQuantization)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
