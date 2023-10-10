@@ -29,6 +29,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+![mountains](https://github.com/ArmandoLiebenberg/ColourQuantization/assets/34469720/5a2d9f22-0b5d-467e-929a-7ea5d686846c) ![image](https://github.com/ArmandoLiebenberg/ColourQuantization/assets/34469720/9cbdd446-2452-4354-aa0c-4ee28034f0b8)
+
+
+
+
 Colour Image Quantization using K-Means Clustering. Color quantization is quantization (Compressing a range of values) applied to color spaces, typically of images or video.
 In practice this means taking an image, sampling its colour palette, and producing a smaller color pallete that maintains the detail and brightness of the original image.
 
