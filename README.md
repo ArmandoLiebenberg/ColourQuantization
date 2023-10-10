@@ -42,7 +42,7 @@ The project is written in C++, using make to build. For image processing we use 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Simply build with make, and run the 
+Simply build with make, and run the executable
 
 ### Prerequisites
 
