@@ -71,16 +71,12 @@ See the [open issues](https://github.com/othneildrew/Best-README-Template/issues
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- CONTACT -->
 ## Contact
 
 Armando Liebenberg - armandoliebenberg@gmail.com
 
 Project Link: [https://github.com/ArmandoLiebenberg/ColourQuantization](https://github.com/ArmandoLiebenberg/ColourQuantization)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
@@ -89,5 +85,3 @@ Use this space to list resources you find helpful and would like to give credit 
 
 * [Improving the Performance of K-Means for Color Quantization](https://arxiv.org/abs/1101.0395)
 * [stb single-file public domain libraries for C/C++ ](https://github.com/nothings/stb)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
