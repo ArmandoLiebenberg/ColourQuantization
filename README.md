@@ -81,7 +81,5 @@ Project Link: [https://github.com/ArmandoLiebenberg/ColourQuantization](https://
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
 * [Improving the Performance of K-Means for Color Quantization](https://arxiv.org/abs/1101.0395)
 * [stb single-file public domain libraries for C/C++ ](https://github.com/nothings/stb)
