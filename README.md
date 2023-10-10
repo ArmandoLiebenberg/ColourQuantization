@@ -1,2 +1,115 @@
-# ColourQuantization
-Colour Image Quantization using K-Means Clustering
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
+
+Colour Image Quantization using K-Means Clustering. Color quantization is quantization (Compressing a range of values) applied to color spaces, typically of images or video.
+In practice this means taking an image, sampling its colour palette, and producing a smaller color pallete that maintains the detail and brightness of the original image.
+
+This is typically done through means of a clustering algorithm. Treating the colours in the color pallete as vectors in 3D space (Typically in RGB, though there are color spaces
+that are more suited for this sort of thing), and solving using a clustering algorithm. For this problem we've gone with the simple 'Naive K-means' clustering algorithm.
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+### Built With
+
+The project is written in C++, using make to build. For image processing we use the wonderful stb_image and stb_image_write libraries from Sean Barrett.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+Simply build with make, and run the 
+
+### Prerequisites
+
+Gnu Make 4.2.1 is used
+G++ 8.5.0 20210514 is used
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+Run with ./make
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- ROADMAP -->
+## Roadmap
+
+- [ ] Add support for compiling to windows .exe
+- [ ] Add command line options for different initialization methods
+- [ ] Add command line options for color pallete size
+- [ ] Use SIMD to speed up
+- [ ] Add support for OPENMP/MPI over server cluster
+- [ ] Add GUI support using QT or Dear IMGUI
+
+See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Armando Liebenberg - armandoliebenberg@gmail.com
+
+Project Link: [https://github.com/ArmandoLiebenberg/ColourQuantization](https://github.com/ArmandoLiebenberg/ColourQuantization)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
+
+* [Improving the Performance of K-Means for Color Quantization](https://arxiv.org/abs/1101.0395)
+* [stb single-file public domain libraries for C/C++ ](https://github.com/nothings/stb)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
