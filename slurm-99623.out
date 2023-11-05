@@ -1,0 +1,15 @@
+Loading compiler-rt version 2023.1.0
+Loading mkl version 2023.1.0
+Loading tbb version 2021.9.0
+
+Loading mkl/latest
+  Loading requirement: tbb/latest
+rm -f main
+g++ -g -Wall -pg -std=c++11 -fopenmp -o main src/main.cpp
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/var/slurm/d/job99623/slurm_script: line 17: 1651409 Aborted                 ./main
+
+real	0m15.712s
+user	1m1.046s
+sys	0m0.003s

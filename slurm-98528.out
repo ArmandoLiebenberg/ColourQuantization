@@ -1,0 +1,3 @@
+rm -f main
+g++ -g -Wall -pg -std=c++11 -mavx -o main src/main.cpp
+slurmstepd: error: *** JOB 98528 ON vgpu10-1 CANCELLED AT 2023-11-02T12:36:02 DUE TO TIME LIMIT ***

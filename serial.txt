@@ -1,0 +1,281 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 88.47      8.97     8.97                             tag_pixels(int, int, std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >, std::vector<int, std::allocator<int> >, std::vector<int, std::allocator<int> >)
+  8.68      9.85     0.88        1   880.06   880.06  stbi_zlib_compress
+  1.48     10.00     0.15        1   150.01   150.01  stbi__parse_zlib(stbi__zbuf*, int)
+  0.59     10.06     0.06        1    60.00   970.07  stbi_write_png_to_mem
+  0.30     10.09     0.03    15360     0.00     0.00  stbiw__encode_png_line(unsigned char*, int, int, int, int, int, int, signed char*)
+  0.30     10.12     0.03        1    30.00    30.00  stbi__parse_entropy_coded_data(stbi__jpeg*)
+  0.20     10.14     0.02                             modify_and_print(int, int, std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >, std::vector<unsigned char, std::allocator<unsigned char> >, std::vector<int, std::allocator<int> >)
+  0.00     10.14     0.00 10396246     0.00     0.00  stbiw__zlib_flushf(unsigned char*, unsigned int*, int*)
+  0.00     10.14     0.00     1280     0.00     0.00  std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&)
+  0.00     10.14     0.00      892     0.00     0.00  stbi__get16be(stbi__context*)
+  0.00     10.14     0.00      394     0.00     0.00  stbi__zbuild_huffman(stbi__zhuffman*, unsigned char const*, int)
+  0.00     10.14     0.00      289     0.00     0.00  stbi__stdio_read(void*, char*, int)
+  0.00     10.14     0.00      256     0.00     0.00  int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&)
+  0.00     10.14     0.00      197     0.00     0.00  stbi__compute_huffman_codes(stbi__zbuf*)
+  0.00     10.14     0.00      164     0.00     0.00  stbi__fill_bits(stbi__zbuf*)
+  0.00     10.14     0.00      144     0.00     0.00  stbi__getn(stbi__context*, unsigned char*, int)
+  0.00     10.14     0.00      144     0.00     0.00  stbi__refill_buffer(stbi__context*)
+  0.00     10.14     0.00        8     0.00     0.00  stbi__get8(stbi__context*)
+  0.00     10.14     0.00        3     0.00     0.00  stbi__get32be(stbi__context*)
+  0.00     10.14     0.00        2     0.00     0.00  stbiw__sbgrowf(void**, int, int) [clone .constprop.218]
+  0.00     10.14     0.00        1     0.00     0.00  _GLOBAL__sub_I_stbi_failure_reason
+  0.00     10.14     0.00        1     0.00   180.01  stbi__load_main(stbi__context*, int*, int*, int*, int, stbi__result_info*, int)
+  0.00     10.14     0.00        1     0.00   180.01  stbi__parse_png_file(stbi__png*, int, int)
+  0.00     10.14     0.00        1     0.00     0.00  stbi__mad3sizes_valid(int, int, int, int)
+  0.00     10.14     0.00        1     0.00   180.01  stbi__load_and_postprocess_8bit(stbi__context*, int*, int*, int*, int)
+  0.00     10.14     0.00        1     0.00     0.00  std::seed_seq::seed_seq<unsigned int>(std::initializer_list<unsigned int>)
+  0.00     10.14     0.00        1     0.00   150.01  stbi_zlib_decode_malloc_guesssize_headerflag
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.10% of 10.14 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     88.5    8.97    0.00                 tag_pixels(int, int, std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >, std::vector<int, std::allocator<int> >, std::vector<int, std::allocator<int> >) [1]
+-----------------------------------------------
+                                                 <spontaneous>
+[2]      9.8    0.02    0.97                 modify_and_print(int, int, std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >, std::vector<unsigned char, std::allocator<unsigned char> >, std::vector<int, std::allocator<int> >) [2]
+                0.06    0.91       1/1           stbi_write_png_to_mem [3]
+-----------------------------------------------
+                0.06    0.91       1/1           modify_and_print(int, int, std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >, std::vector<unsigned char, std::allocator<unsigned char> >, std::vector<int, std::allocator<int> >) [2]
+[3]      9.6    0.06    0.91       1         stbi_write_png_to_mem [3]
+                0.88    0.00       1/1           stbi_zlib_compress [4]
+                0.03    0.00   15360/15360       stbiw__encode_png_line(unsigned char*, int, int, int, int, int, int, signed char*) [11]
+-----------------------------------------------
+                0.88    0.00       1/1           stbi_write_png_to_mem [3]
+[4]      8.7    0.88    0.00       1         stbi_zlib_compress [4]
+                0.00    0.00 10396246/10396246     stbiw__zlib_flushf(unsigned char*, unsigned int*, int*) [73]
+                0.00    0.00       2/2           stbiw__sbgrowf(void**, int, int) [clone .constprop.218] [85]
+-----------------------------------------------
+                0.00    0.18       1/1           stbi__load_and_postprocess_8bit(stbi__context*, int*, int*, int*, int) [7]
+[5]      1.8    0.00    0.18       1         stbi__load_main(stbi__context*, int*, int*, int*, int, stbi__result_info*, int) [5]
+                0.00    0.18       1/1           stbi__parse_png_file(stbi__png*, int, int) [6]
+-----------------------------------------------
+                0.00    0.18       1/1           stbi__load_main(stbi__context*, int*, int*, int*, int, stbi__result_info*, int) [5]
+[6]      1.8    0.00    0.18       1         stbi__parse_png_file(stbi__png*, int, int) [6]
+                0.00    0.15       1/1           stbi_zlib_decode_malloc_guesssize_headerflag [9]
+                0.03    0.00       1/1           stbi__parse_entropy_coded_data(stbi__jpeg*) [12]
+                0.00    0.00     892/892         stbi__get16be(stbi__context*) [75]
+                0.00    0.00     144/144         stbi__getn(stbi__context*, unsigned char*, int) [81]
+                0.00    0.00       8/8           stbi__get8(stbi__context*) [83]
+                0.00    0.00       3/3           stbi__get32be(stbi__context*) [84]
+-----------------------------------------------
+                0.00    0.18       1/1           load_image(std::vector<unsigned char, std::allocator<unsigned char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int&, int&) [8]
+[7]      1.8    0.00    0.18       1         stbi__load_and_postprocess_8bit(stbi__context*, int*, int*, int*, int) [7]
+                0.00    0.18       1/1           stbi__load_main(stbi__context*, int*, int*, int*, int, stbi__result_info*, int) [5]
+-----------------------------------------------
+                                                 <spontaneous>
+[8]      1.8    0.00    0.18                 load_image(std::vector<unsigned char, std::allocator<unsigned char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int&, int&) [8]
+                0.00    0.18       1/1           stbi__load_and_postprocess_8bit(stbi__context*, int*, int*, int*, int) [7]
+                0.00    0.00       1/289         stbi__stdio_read(void*, char*, int) [77]
+-----------------------------------------------
+                0.00    0.15       1/1           stbi__parse_png_file(stbi__png*, int, int) [6]
+[9]      1.5    0.00    0.15       1         stbi_zlib_decode_malloc_guesssize_headerflag [9]
+                0.15    0.00       1/1           stbi__parse_zlib(stbi__zbuf*, int) [10]
+-----------------------------------------------
+                0.15    0.00       1/1           stbi_zlib_decode_malloc_guesssize_headerflag [9]
+[10]     1.5    0.15    0.00       1         stbi__parse_zlib(stbi__zbuf*, int) [10]
+                0.00    0.00     197/197         stbi__compute_huffman_codes(stbi__zbuf*) [79]
+-----------------------------------------------
+                0.03    0.00   15360/15360       stbi_write_png_to_mem [3]
+[11]     0.3    0.03    0.00   15360         stbiw__encode_png_line(unsigned char*, int, int, int, int, int, int, signed char*) [11]
+-----------------------------------------------
+                0.03    0.00       1/1           stbi__parse_png_file(stbi__png*, int, int) [6]
+[12]     0.3    0.03    0.00       1         stbi__parse_entropy_coded_data(stbi__jpeg*) [12]
+                0.00    0.00       1/1           stbi__mad3sizes_valid(int, int, int, int) [87]
+-----------------------------------------------
+                0.00    0.00 10396246/10396246     stbi_zlib_compress [4]
+[73]     0.0    0.00    0.00 10396246         stbiw__zlib_flushf(unsigned char*, unsigned int*, int*) [73]
+-----------------------------------------------
+                0.00    0.00    1280/1280        std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::operator=(std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > const&) [140]
+[74]     0.0    0.00    0.00    1280         std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) [74]
+-----------------------------------------------
+                0.00    0.00     892/892         stbi__parse_png_file(stbi__png*, int, int) [6]
+[75]     0.0    0.00    0.00     892         stbi__get16be(stbi__context*) [75]
+                0.00    0.00     144/144         stbi__refill_buffer(stbi__context*) [82]
+-----------------------------------------------
+                0.00    0.00     394/394         stbi__compute_huffman_codes(stbi__zbuf*) [79]
+[76]     0.0    0.00    0.00     394         stbi__zbuild_huffman(stbi__zhuffman*, unsigned char const*, int) [76]
+-----------------------------------------------
+                0.00    0.00       1/289         load_image(std::vector<unsigned char, std::allocator<unsigned char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int&, int&) [8]
+                0.00    0.00     144/289         stbi__refill_buffer(stbi__context*) [82]
+                0.00    0.00     144/289         stbi__getn(stbi__context*, unsigned char*, int) [81]
+[77]     0.0    0.00    0.00     289         stbi__stdio_read(void*, char*, int) [77]
+-----------------------------------------------
+                0.00    0.00     256/256         select_random(std::vector<int, std::allocator<int> >, int, int) [90]
+[78]     0.0    0.00    0.00     256         int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [78]
+-----------------------------------------------
+                0.00    0.00     197/197         stbi__parse_zlib(stbi__zbuf*, int) [10]
+[79]     0.0    0.00    0.00     197         stbi__compute_huffman_codes(stbi__zbuf*) [79]
+                0.00    0.00     394/394         stbi__zbuild_huffman(stbi__zhuffman*, unsigned char const*, int) [76]
+                0.00    0.00     164/164         stbi__fill_bits(stbi__zbuf*) [80]
+-----------------------------------------------
+                0.00    0.00     164/164         stbi__compute_huffman_codes(stbi__zbuf*) [79]
+[80]     0.0    0.00    0.00     164         stbi__fill_bits(stbi__zbuf*) [80]
+-----------------------------------------------
+                0.00    0.00     144/144         stbi__parse_png_file(stbi__png*, int, int) [6]
+[81]     0.0    0.00    0.00     144         stbi__getn(stbi__context*, unsigned char*, int) [81]
+                0.00    0.00     144/289         stbi__stdio_read(void*, char*, int) [77]
+-----------------------------------------------
+                0.00    0.00     144/144         stbi__get16be(stbi__context*) [75]
+[82]     0.0    0.00    0.00     144         stbi__refill_buffer(stbi__context*) [82]
+                0.00    0.00     144/289         stbi__stdio_read(void*, char*, int) [77]
+-----------------------------------------------
+                0.00    0.00       8/8           stbi__parse_png_file(stbi__png*, int, int) [6]
+[83]     0.0    0.00    0.00       8         stbi__get8(stbi__context*) [83]
+-----------------------------------------------
+                0.00    0.00       3/3           stbi__parse_png_file(stbi__png*, int, int) [6]
+[84]     0.0    0.00    0.00       3         stbi__get32be(stbi__context*) [84]
+-----------------------------------------------
+                0.00    0.00       2/2           stbi_zlib_compress [4]
+[85]     0.0    0.00    0.00       2         stbiw__sbgrowf(void**, int, int) [clone .constprop.218] [85]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [147]
+[86]     0.0    0.00    0.00       1         _GLOBAL__sub_I_stbi_failure_reason [86]
+-----------------------------------------------
+                0.00    0.00       1/1           stbi__parse_entropy_coded_data(stbi__jpeg*) [12]
+[87]     0.0    0.00    0.00       1         stbi__mad3sizes_valid(int, int, int, int) [87]
+-----------------------------------------------
+                0.00    0.00       1/1           select_random(std::vector<int, std::allocator<int> >, int, int) [90]
+[88]     0.0    0.00    0.00       1         std::seed_seq::seed_seq<unsigned int>(std::initializer_list<unsigned int>) [88]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+  [86] _GLOBAL__sub_I_stbi_failure_reason (main.cpp) [5] stbi__load_main(stbi__context*, int*, int*, int*, int, stbi__result_info*, int) (stb_image.h) [79] stbi__compute_huffman_codes(stbi__zbuf*) (stb_image.h)
+   [1] tag_pixels(int, int, std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >, std::vector<int, std::allocator<int> >, std::vector<int, std::allocator<int> >) [10] stbi__parse_zlib(stbi__zbuf*, int) (stb_image.h) [12] stbi__parse_entropy_coded_data(stbi__jpeg*) (stb_image.h)
+   [2] modify_and_print(int, int, std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >, std::vector<unsigned char, std::allocator<unsigned char> >, std::vector<int, std::allocator<int> >) [77] stbi__stdio_read(void*, char*, int) (stb_image.h) [7] stbi__load_and_postprocess_8bit(stbi__context*, int*, int*, int*, int) (stb_image.h)
+  [83] stbi__get8(stbi__context*) (stb_image.h) [73] stbiw__zlib_flushf(unsigned char*, unsigned int*, int*) (stb_image_write.h) [78] int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&)
+  [81] stbi__getn(stbi__context*, unsigned char*, int) (stb_image.h) [82] stbi__refill_buffer(stbi__context*) (stb_image.h) [74] std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&)
+  [75] stbi__get16be(stbi__context*) (stb_image.h) [6] stbi__parse_png_file(stbi__png*, int, int) (stb_image.h) [88] std::seed_seq::seed_seq<unsigned int>(std::initializer_list<unsigned int>)
+  [84] stbi__get32be(stbi__context*) (stb_image.h) [76] stbi__zbuild_huffman(stbi__zhuffman*, unsigned char const*, int) (stb_image.h) [3] stbi_write_png_to_mem
+  [85] stbiw__sbgrowf(void**, int, int) [clone .constprop.218] (stb_image_write.h) [87] stbi__mad3sizes_valid(int, int, int, int) (stb_image.h) [4] stbi_zlib_compress
+  [80] stbi__fill_bits(stbi__zbuf*) (stb_image.h) [11] stbiw__encode_png_line(unsigned char*, int, int, int, int, int, int, signed char*) (stb_image_write.h) [9] stbi_zlib_decode_malloc_guesssize_headerflag

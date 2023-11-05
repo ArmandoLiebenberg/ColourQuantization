@@ -1,0 +1,9 @@
+rm -f main
+g++ -g -Wall -pg -std=c++11 -O3  -o main src/main.cpp
+Image width = 500
+Image height = 500
+4 cycles ran
+
+real	0m1.503s
+user	0m0.859s
+sys	0m0.007s

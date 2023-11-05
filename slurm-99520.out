@@ -1,0 +1,15 @@
+Loading compiler-rt version 2023.1.0
+Loading mkl version 2023.1.0
+Loading tbb version 2021.9.0
+
+Loading mkl/latest
+  Loading requirement: tbb/latest
+rm -f main
+g++ -g -Wall -pg -std=c++11 -fopenmp  -o main src/main.cpp
+Image width = 500
+Image height = 500
+4 cycles ran
+
+real	0m40.360s
+user	0m39.741s
+sys	0m0.011s

@@ -1,0 +1,15 @@
+Loading compiler-rt version 2023.1.0
+Loading mkl version 2023.1.0
+Loading tbb version 2021.9.0
+
+Loading mkl/latest
+  Loading requirement: tbb/latest
+rm -f main
+g++ -g -Wall -pg -std=c++11 -fopen -o main src/main.cpp
+g++: error: unrecognized command line option ‘-fopen’; did you mean ‘-fopenmp’?
+make: *** [makefile:9: main] Error 1
+/var/slurm/d/job99654/slurm_script: line 17: ./main: No such file or directory
+
+real	0m0.001s
+user	0m0.000s
+sys	0m0.000s

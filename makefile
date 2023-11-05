@@ -1,5 +1,5 @@
 CC = g++
-CFLAGS = -g -Wall -pg -std=c++11 -O3 -mavx
+CFLAGS = -Wall -std=c++11 -fopenmp -lgomp -lm -ldl
 
 TARGET = main
 

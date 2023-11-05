@@ -1,0 +1,25 @@
+Loading compiler-rt version 2023.1.0
+Loading mkl version 2023.1.0
+Loading tbb version 2021.9.0
+
+Loading mkl/latest
+  Loading requirement: tbb/latest
+rm -f main
+g++ -g -Wall -pg -std=c++11 -fopenmp -o main src/main.cpp
+src/main.cpp: In function ‘std::vector<std::vector<int> > tag_pixels(int, int, std::vector<std::vector<int> >, std::vector<int>, std::vector<int>)’:
+src/main.cpp:112:52: error: expected ‘:’ before ‘[’ token
+             #pragma omp parallel for reduction(mean[0], mean[1], mean[2]) private(y,x)
+                                                    ^
+                                                    :
+src/main.cpp:112:83: error: ‘y’ has not been declared
+             #pragma omp parallel for reduction(mean[0], mean[1], mean[2]) private(y,x)
+                                                                                   ^
+src/main.cpp:112:85: error: ‘x’ has not been declared
+             #pragma omp parallel for reduction(mean[0], mean[1], mean[2]) private(y,x)
+                                                                                     ^
+make: *** [makefile:9: main] Error 1
+/var/slurm/d/job99582/slurm_script: line 17: ./main: No such file or directory
+
+real	0m0.001s
+user	0m0.000s
+sys	0m0.000s
