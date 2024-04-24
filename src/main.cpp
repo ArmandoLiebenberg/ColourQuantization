@@ -185,8 +185,8 @@ void modify_and_print(int width, int height, std::vector<std::vector<int>> kmean
 
     unsigned char* data = &image_data.front();
 
-    remove("/home/Student/s4642427/ColourQuantization/output.png");
-    stbi_write_png("/home/Student/s4642427/ColourQuantization/output.png", width, height, 3, data, width*3);
+    remove("output.png");
+    stbi_write_png("output.png", width, height, 3, data, width*3);
 }
 
 std::vector<std::vector<int>> select_random(std::vector<int> image, int width, int height) 
