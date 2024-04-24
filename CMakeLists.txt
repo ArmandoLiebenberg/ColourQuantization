@@ -18,6 +18,8 @@ if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
     else()
         message(STATUS "Doxygen not found, not building docs")
     endif()
+
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address -fsanitize=leak -fsanitize=undefined -g -O1")
 endif()
 
 # include(FetchContent)
