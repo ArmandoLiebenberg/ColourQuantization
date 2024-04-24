@@ -1,7 +1,3 @@
-//
-// Created by aliebs on 11/08/23.
-//
-
 #include <iostream>
 #include <vector>
 
@@ -19,30 +15,22 @@
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 
 #define STB_IMAGE_IMPLEMENTATION
-#include "../lib/stb_image.h"
-#include "../lib/stb_image_write.h"
+#include "../include/stb_image.h"
+#include "../include/stb_image_write.h"
 
-
-void modify_and_print(int width, int height, std::vector<std::vector<int>> kmeans, std::vector<unsigned char> image, std::vector<int> tags);
-std::vector<std::vector<int>> tag_pixels(int width, int height, std::vector<std::vector<int>> kmeans, std::vector<int>  image, std::vector<int> tags);
-std::vector<int> find_distance(int width, int height, std::vector<std::vector<int>> kmeans, std::vector<int>  image, std::vector<int> tags);
-bool load_image(std::vector<unsigned char>& image, const std::string& filename, int& x, int&y);
-std::vector<std::vector<int>> complete_random();
-std::vector<std::vector<int>> select_random(std::vector<int>  image, int width, int height);
-std::vector<std::vector<int>> fuzzy(std::vector<unsigned char> image, int width, int height);
+#include "../include/ColourQuantization/main.hpp"
 
 struct Vector3D {
     int x, y, z;
 };
 
-int main()
+int run(const std::string& FileName)
 {
     // Image Reading
-    std::string filename = "res/mountains.png";
     int width, height;
     std::vector<unsigned char> image_data;
 
-    bool success = load_image(image_data, filename, width, height);
+    bool success = load_image(image_data, FileName, width, height);
     if (!success)
     {
         std::cout << "Error loading image\n";

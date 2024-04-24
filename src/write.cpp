@@ -6,8 +6,8 @@
 
 extern "C" {
     #define STB_IMAGE_IMPLEMENTATION
-    #include "../lib/stb_image.h"
-    #include "../lib/stb_image_write.h"
+    #include "../include/stb_image.h"
+    #include "../include/stb_image_write.h"
 }
 
 // Loads as RGBA... even if file is only RGB
