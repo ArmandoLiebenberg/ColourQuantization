@@ -1,7 +1,8 @@
-file(GLOB HEADER_LIST CONFIGURE_DEPENDS "${ColourImageQuantization_SOURCE_DIR}/include/ColourQuantization/*.hpp")
+#file(GLOB HEADER_LIST CONFIGURE_DEPENDS "${ColourImageQuantization_SOURCE_DIR}/include/ColourQuantization/*.hpp")
+set(HEADER_LIST "${ColourImageQuantization_SOURCE_DIR}/include/ColourQuantization/main.hpp")
 
 # Make an automatic library - will be static or dynamic based on user setting
-add_library(quantization_library lib.cpp ${HEADER_LIST})
+add_library(quantization_library main.cpp ${HEADER_LIST})
 
 # We need this directory, and users of our library will need it too
 target_include_directories(quantization_library PUBLIC ../include)

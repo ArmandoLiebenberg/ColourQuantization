@@ -18,7 +18,7 @@
 #include "../include/stb_image.h"
 #include "../include/stb_image_write.h"
 
-#include "../include/ColourQuantization/main.hpp"
+#include "ColourQuantization/main.hpp"
 
 struct Vector3D {
     int x, y, z;

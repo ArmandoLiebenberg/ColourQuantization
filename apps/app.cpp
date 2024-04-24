@@ -1,7 +1,6 @@
-#include "../include/ColourQuantization/main.hpp"
+#include "ColourQuantization/main.hpp"
 
 int main() {
-    run("res/mountains.png");
-
+    run("mountains.png");
     return 0;
 }
